@@ -1,0 +1,5 @@
+from msilib.schema import MsiDigitalCertificate
+
+
+release: python manage.py  migrate
+web: gunicorn Bonde.wsgi --lo-file-
