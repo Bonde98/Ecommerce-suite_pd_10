@@ -1,2 +1,2 @@
 
-web: gunicorn bondecommerce.wsgi 
+web: gunicorn Bonde.wsgi 
