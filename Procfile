@@ -1,2 +1,2 @@
 
-web: gunicorn Bonde.wsgi --logfile-
+web: gunicorn bondecommerce.wsgi --logfile-
