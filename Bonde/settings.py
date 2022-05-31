@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'Bonde.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ddd2qrhfa8eg1f', 
-        'USER': 'twrjxgnxsiroca', 
-        'PASSWORD': 'e76979a78feb1251a207b2e92e7d778cad5dab68bb5ecdcfd021c24c3fc43055',
-        'HOST': 'ec2-3-224-125-117.compute-1.amazonaws.com', 
+        'NAME': 'd65ub7aa04eadv', 
+        'USER': 'qnouwmcodqqeas', 
+        'PASSWORD': 'b167762a45726507d3493be007f09eec7d76e41ec9be9e9475a601d148486b45',
+        'HOST': 'ec2-34-231-221-151.compute-1.amazonaws.com', 
         'PORT': '',
     }
 }
