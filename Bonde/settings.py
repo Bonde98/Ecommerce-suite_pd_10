@@ -38,8 +38,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bondecommerce'
+    'users.apps.UsersConfig',
+    'cart.apps.CartConfig',
+    'send_mail.apps.SendMailConfig',
+    'order.apps.OrderConfig',
+    'shop.apps.ShopConfig',
+    'payement.apps.PayementConfig',
+   
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser'
+CART_SESSION_ID = "cart"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,14 +58,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'django.contrib.sessions.models.Session',
 ]
+   
 
 ROOT_URLCONF = 'Bonde.urls'
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [BASE_DIR / "Bonde" / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -64,6 +77,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                  #Ajouter 
+                'cart.context_processors.cart',
             ],
         },
     },
@@ -80,17 +95,23 @@ WSGI_APPLICATION = 'Bonde.wsgi.application'
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
-'''
+}'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd65ub7aa04eadv', 
-        'USER': 'qnouwmcodqqeas', 
-        'PASSWORD': 'b167762a45726507d3493be007f09eec7d76e41ec9be9e9475a601d148486b45',
-        'HOST': 'ec2-34-231-221-151.compute-1.amazonaws.com', 
-        'PORT': '',
+        'NAME': 'base', 
+        'USER': 'postgres', 
+        'PASSWORD': 'badiane99',
+        'HOST': 'localhost', 
+        'PORT': '5432',
     }
+}
+
+# PAydunya
+PAYDUNYA_ACCESS_TOKENS = {
+    'PAYDUNYA-MASTER-KEY': "",
+    'PAYDUNYA-PRIVATE-KEY': "",
+    'PAYDUNYA-TOKEN': ""
 }
 
 # Password validation
@@ -121,18 +142,40 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-#STATIC_URL = 'static/'
+'''STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / "static"
+
+STATICFILES_DIR = [
+    BASE_DIR / "static",
+    BASE_DIR / "Bonde" / "static",
+]'''
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = "/static/"
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "Bonde/static")]
+    
 django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
