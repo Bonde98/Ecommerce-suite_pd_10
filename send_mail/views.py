@@ -8,7 +8,7 @@ from django.core.mail import EmailMultiAlternatives
 
 def send_new_order_email(email):
     send_mail(
-        'Votre commande sur Jaba',
+        'Votre commande sur Diallo',
         'Nous avons bien reçu votre commande',
         'contact@jaba.com',
         [email],
