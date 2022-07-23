@@ -28,9 +28,9 @@ def send_new_order_email_with_template(email):
 
 def payment_successful_email(email):
     send_mail(
-        'Votre commande sur Jaba',
+        'Votre commande sur Diallo',
         'Nous avons bien reçu votre paiement',
-        'contact@jaba.com',
+        'contact@diallo.com',
         [email],
         fail_silently=False,
     )
