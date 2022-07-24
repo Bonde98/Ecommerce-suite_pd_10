@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="col-md-4 text-center">
     <div class="card">
       <a href="{{ product.get_absolute_url }}">
         <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
@@ -7,6 +7,7 @@
         <h4 class="card-title">{{ product.name }}</h4>
         <h4 class="card-text" style="color: rgb(93 , 140 , 6);">Prix: {{ product.price }}Fcfa</h4>
         <p class="card-text">{{ product.description }}</p>
+        <a href="{{ product.get_absolute_url }}" class="btn"> Voire</a> 
       </div>
     </div>
   </div>

@@ -1,11 +1,12 @@
+from http import client
 from django.shortcuts import render,redirect
 
 # Create your views here.
-from order.models import OrderItem
+from order.models import Order, OrderItem
 from send_mail.views import send_new_order_email, send_new_order_email_with_template
 from .forms import OrderCreateForm
 from cart.cart import Cart
-
+from .models import Order
 
 def order_create(request):
     cart = Cart(request)
@@ -24,10 +25,10 @@ def order_create(request):
                 )
             cart.clear()
             request.session["order_id"] = order.id
-            # on envoi un mail au client
+            # On envoi un mail au client
             send_new_order_email(email)
             send_new_order_email_with_template(email)
-            return redirect("payment-process")
+            return redirect("order_created")
         else:
             print("Form", form.errors)
     else:

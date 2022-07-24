@@ -2,5 +2,16 @@
 
 
 {% block contenu %}
-<h2>Merci pour votre commande sur Jaba</h2>
+
+    <section class="text-center">
+        <h2> Merci pour votre commande sur DialloShop </h2>
+        
+        <h5>
+        Bonjour M. {{ user.email }}, nous avons reçu votre commande
+        </h5>
+        <p>Nous t'appellerons pour les détails</p>
+        <a style="background-color: rgb(93,140,6);" href="{%  url 'home' %}"  class=" btn  "><h6>Contuinez à faire vos Achats</h6></a>
+    </section>
+
+    
 {% endblock contenu %}

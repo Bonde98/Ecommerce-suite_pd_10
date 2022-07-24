@@ -14,7 +14,7 @@ paydunya.debug = True
 
 paydunya.api_keys = settings.PAYDUNYA_ACCESS_TOKENS
 
-store = Store(name='Magasin Chez Jaba')
+store = Store(name='Magasin Chez Diallo')
 
 
 def payment_process(request):
