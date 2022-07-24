@@ -21,23 +21,4 @@
   </div>
 </section>
 
-
- 
-    <div class="row text-center mx-auto" style="padding:5%;" >
-      {% if products %}
-        {% for product in products %}
-        <div  class="card pt-3" style="width: 18rem;margin: 20px;">
-          <a href="{{ product.get_absolute_url }}">
-            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" width="100%">
-          </a>
-          <div class="card-body text-center">
-            <div class="card-title"> <h3> {{ product.name }}</h3> </div>
-              <div style="color:rgb(108, 111, 7)" class="card-text"> <h5> {{ product.price }} Fcfa</h5> </div>
-              <a href="{{ product.get_absolute_url }}" class="btn"> Voire</a> 
-           </div>   
-        </div>
-      {% endfor %}
-      {% endif %}
-      </div>
-
 {% endblock contenu %}

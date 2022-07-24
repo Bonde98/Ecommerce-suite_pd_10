@@ -10,7 +10,7 @@ def send_new_order_email(email):
     send_mail(
         'Votre commande sur Diallo',
         'Nous avons bien reçu votre commande',
-        'contact@jaba.com',
+        'contact@diallo.com',
         [email],
         fail_silently=False,
     )
