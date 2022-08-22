@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
+
 import django_heroku
 from pathlib import Path
 
@@ -95,14 +96,16 @@ WSGI_APPLICATION = 'Bonde.wsgi.application'
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}'''
+}
+'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'base', 
+        'NAME': 'bonde', 
         'USER': 'postgres', 
-        'PASSWORD': 'badiane99',
-        'HOST': 'localhost', 
+        'PASSWORD': 'b@di@ne99',
+        'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
 }
@@ -175,7 +178,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-try:
+'''try:
     from .local_settings import *
 except ImportError:
-    pass
+    pass'''
