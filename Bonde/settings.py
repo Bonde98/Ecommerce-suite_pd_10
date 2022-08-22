@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-
 import django_heroku
 from pathlib import Path
 
@@ -44,7 +43,7 @@ INSTALLED_APPS = [
     'send_mail.apps.SendMailConfig',
     'order.apps.OrderConfig',
     'shop.apps.ShopConfig',
-    'payement.apps.PayementConfig',
+    'payment.apps.PaymentConfig',
    
 ]
 
@@ -64,7 +63,7 @@ MIDDLEWARE = [
    
 
 ROOT_URLCONF = 'Bonde.urls'
-LOGIN_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "order_create"
 LOGOUT_REDIRECT_URL = "home"
 
 TEMPLATES = [
@@ -96,9 +95,7 @@ WSGI_APPLICATION = 'Bonde.wsgi.application'
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
-'''
-
+}'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -178,7 +175,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-'''try:
+"""try:
     from .local_settings import *
 except ImportError:
-    pass'''
+    pass"""

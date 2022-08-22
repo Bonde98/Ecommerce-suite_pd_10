@@ -12,6 +12,9 @@ class SignUpView(CreateView):
     success_url = reverse_lazy("connexion")
     template_name = "register.html"
 
+
+
+
 def connexion(request):
     connexion = LoginForm(request.POST or None )
     if connexion.is_valid():
