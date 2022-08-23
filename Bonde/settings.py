@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'send_mail.apps.SendMailConfig',
     'order.apps.OrderConfig',
     'shop.apps.ShopConfig',
-    'payment.apps.PaymentConfig',
    
 ]
 
@@ -99,9 +98,9 @@ WSGI_APPLICATION = 'Bonde.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bonde', 
+        'NAME': 'commerce', 
         'USER': 'postgres', 
-        'PASSWORD': 'b@di@ne99',
+        'PASSWORD':'b@di@ne99',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }

@@ -26,7 +26,7 @@ urlpatterns = [
     path("",include("shop.urls")),
     path("cart/",include("cart.urls")),
     path("",include("order.urls")),
-    path("payment/",include("payment.urls")),
+   
     
    
    
