@@ -2,29 +2,32 @@
 
 {% block contenu %}
 
- <h1 class="text-center">Se connecter</h1>
+ 
 
     <!--form se connecter-->
  <form  method="post" class=" d-grid gap-2 col-5 mx-auto row g-3 mt-5 container-fluid py-3 text-center">
     {% csrf_token %}
-    <div class="col-md-12">
-        <h3 class="">Avec</h3>
-       
-    </div>     
-    <div class="col ">
-      <label for="inputEmail" class="form-label">Email</label>
-      <input type="Email" class="form-control py-4 " name="email" id="inputEmail">
-    </div>   
+   <div class="card">
+    <div class="col">
+     
+      <h1 class="">Se connecter</h1>
+     
+</div>     
+  <div class="col card-body  ">
+    <label for="inputEmail" class="form-label">Email</label>
+    <input type="Email" class="form-control py-4" placeholder="Adress email" name="email" id="inputEmail">
+  </div>   
 
-  <div class="col-md-12 text-center">
-    <label for="inputPassword4" class="form-label">Mot de Passe</label>
-    <input type="password" class="form-control py-4" name="password" id="inputPassword4">
-  </div>
-  <div class="col-md-12 text-center text-dark">
-    <button  class="btn submit ">connecter</button> 
-  </div>
-  <div class="text-center mt-5">
-    J'ai pas de compte ? <a class="btn btn-save " style="background-color:rgb(93, 140, 6)" href="{% url 'signup' %}"> Créer un compte</a> 
+<div class="col card-body">
+  <label for="inputPassword4" class="form-label">Mot de Passe</label>
+  <input type="password" class="form-control py-4" placeholder="Password" name="password" id="inputPassword4">
+</div>
+<div class="col-md-12 text-dark">
+  <button  class="btn submit ">connecter</button> 
+</div>
+<div class="text-center mt-5">
+  J'ai pas de compte ? <a class="btn btn-save " style="background-color:rgb(93, 140, 6)" href="{% url 'signup' %}"> Créer</a> 
+ </div>
    </div>
   
 </form>

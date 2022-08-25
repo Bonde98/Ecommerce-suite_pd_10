@@ -61,7 +61,11 @@
     </tbody>
   </table>
   <div class="text-center">
+    {% if user.is_authenticated %}
     <a href="{%  url 'order_create' %}" class=" btn btn-primary">Valider votre commande</a>
+    {% else %}
+    <a href="{%  url 'connexion' %}" class=" btn btn-primary">Valider votre commande</a>
+    {% endif %}
     <a href="{%  url 'home' %}" class=" btn btn-light text-dark py-2">Ajouter d'autre Produit</a>
   </div>
   

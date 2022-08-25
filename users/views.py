@@ -14,6 +14,11 @@ class SignUpView(CreateView):
 
 
 
+def bonde(request):
+    
+    return render(request,"users/essaye.html")
+
+
 
 def connexion(request):
     connexion = LoginForm(request.POST or None )
@@ -23,6 +28,6 @@ def connexion(request):
         user = authenticate(request,email=email,password=password)
         if user is not None:
             login(request,user)
-            return redirect("home")
+            return redirect("cart_detail")
     return render(request,"users/connexion.html",{"connexion":connexion})
 

@@ -1,12 +1,15 @@
 {% extends '_base.html' %}
 {% block contenu %}
- <p>bonjour </p>
 
-<h1 class="text-center">Inscription...</h1>  
-<form action="" method="post" class="text-center col-md-8 m-auto py-5 container-fluid">
+
+
+ <h1 class="text-center">Inscription...</h1>  
+<form action="" method="post" class="text-center bg-right col-md-6 m-auto py-5 container-fluid card">
    {% csrf_token %}
    {{ form.as_p }}
-   <button class="btn btn-save submit " style="background-color:rgb(93, 140, 6)"> <h5>S'inscrire</h5> </button> 
+   <div>
+      <button class="btn btn-save submit " style="background-color:rgb(93, 140, 6)">S'inscrire </button> 
+   </div>
    <div class="text-center mt-5">
     J'ai déja un compte ? <a class="btn btn-save " style="background-color:rgb(93, 140, 6)" href="{% url 'connexion' %}"> Connecter </a> 
    </div>
