@@ -106,6 +106,20 @@ DATABASES = {
     }
 }
 
+"""DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ddip81923j44r8', 
+        'USER': 'rmfjmwfrgmfdzr', 
+        'PASSWORD':'4859c4bbd51288a262620cacb4f9c6c7b6d6bbfef6282c3244ee09667521a8d5',
+        'HOST': 'ec2-44-205-112-253.compute-1.amazonaws.com', 
+        'PORT': '5432',
+    }
+}"""
+
+
+
+
 # PAydunya
 PAYDUNYA_ACCESS_TOKENS = {
     'PAYDUNYA-MASTER-KEY': "",

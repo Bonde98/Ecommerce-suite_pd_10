@@ -8,7 +8,7 @@
     <div class="col-md-8 mx-auto mb-4">
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Que voulez-vous acheter?" aria-label="Search"
-          name="A">
+          name="q">
         <button class="btn btn-outline-success" type="submit">Rechercher</button>
       </form>
     </div>
@@ -21,7 +21,7 @@
       <ul class="list-group">
         {% for category in categories %}
         <li class="list-group-item">
-          <a href="#">{{ category.name }}</a>
+          <a href="" name="a">{{ category.name }} </a>
         </li>
         {% endfor %}
       </ul>

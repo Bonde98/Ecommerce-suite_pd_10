@@ -6,7 +6,7 @@ from shop.models import Product
 
 class Order(models.Model):
     full_name = models.CharField(max_length=150)
-    email = models.EmailField()
+    #email = models.EmailField()
     phone = models.CharField(max_length=9)
     address = models.CharField(max_length=60)
     paid = models.BooleanField(default=False)
