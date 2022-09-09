@@ -97,14 +97,21 @@ WSGI_APPLICATION = 'Bonde.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+<<<<<<< HEAD
 }'''
 
 DATABASES = {
+=======
+}
+
+
+"""DATABASES = {
+>>>>>>> d06056a22e7ca670d17c505393764379c6e33749
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'commerce', 
@@ -113,7 +120,7 @@ DATABASES = {
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
-}
+}"""
 
 
 

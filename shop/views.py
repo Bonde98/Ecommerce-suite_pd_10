@@ -1,5 +1,9 @@
 
 
+<<<<<<< HEAD
+=======
+from itertools import product
+>>>>>>> d06056a22e7ca670d17c505393764379c6e33749
 
 from django.shortcuts import render,get_object_or_404
 from django.views.generic import DetailView
