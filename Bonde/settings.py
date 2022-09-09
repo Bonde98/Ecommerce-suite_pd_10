@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-import django_heroku
+#import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-bzh+a&4@w&%ly57b@bs*b^#g4qixe!r)2e-9g$(wzo5&ai7f&f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["myappcommmerce.herokuapp.com"]
+#ALLOWED_HOSTS = ["myappcommmerce.herokuapp.com"]
 
 
 # Application definition
@@ -43,8 +43,16 @@ INSTALLED_APPS = [
     'send_mail.apps.SendMailConfig',
     'order.apps.OrderConfig',
     'shop.apps.ShopConfig',
+    'rest_framework',
    
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 3,
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
+}
 
 AUTH_USER_MODEL = 'users.CustomUser'
 CART_SESSION_ID = "cart"
@@ -95,37 +103,28 @@ WSGI_APPLICATION = 'Bonde.wsgi.application'
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'commerce', 
         'USER': 'postgres', 
-        'PASSWORD':'b@di@ne99',
+        'PASSWORD':'badiane99',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
 }
 
-"""DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ddip81923j44r8', 
-        'USER': 'rmfjmwfrgmfdzr', 
-        'PASSWORD':'4859c4bbd51288a262620cacb4f9c6c7b6d6bbfef6282c3244ee09667521a8d5',
-        'HOST': 'ec2-44-205-112-253.compute-1.amazonaws.com', 
-        'PORT': '5432',
-    }
-}"""
 
 
 
 
-# PAydunya
+"""# PAydunya
 PAYDUNYA_ACCESS_TOKENS = {
     'PAYDUNYA-MASTER-KEY': "",
     'PAYDUNYA-PRIVATE-KEY': "",
     'PAYDUNYA-TOKEN': ""
-}
+}"""
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -179,7 +178,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "Bonde/static")]
     
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

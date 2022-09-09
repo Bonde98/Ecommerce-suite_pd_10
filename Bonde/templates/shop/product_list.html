@@ -21,7 +21,9 @@
       <ul class="list-group">
         {% for category in categories %}
         <li class="list-group-item">
-          <a href="" name="a">{{ category.name }} </a>
+          <a href="" name="q">{{ category.name }} </a>
+          
+         
         </li>
         {% endfor %}
       </ul>
@@ -29,12 +31,15 @@
 
     <div class="col-md-9">
       <div class="row">
-
+        
         {% if products %}
+       
+          
 
         {% for product in products %}
         {% include "partials/product-card.html" %}
         {% endfor %}
+      
 
         {% else %}
 

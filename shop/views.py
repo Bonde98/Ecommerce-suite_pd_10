@@ -1,7 +1,6 @@
 
 
-from itertools import product
-from re import A
+
 from django.shortcuts import render,get_object_or_404
 from django.views.generic import DetailView
 from django.views.generic.base import View
@@ -35,13 +34,6 @@ class ProductList(View):
             )
         return render(request, self.template_name, {"products": products, "categories": categories, })
 
-""" def get(self, request):
-        products = Product.objects.all()
-        categories = Category.objects.all()
-        if category:
-            category = get_object_or_404(Category, slug=category)
-            products = products.filter(category=category)
-        return render(request, self.template_name, {"products": products, "categories": categories, })"""
 
 class ProductDetail(DetailView):
     model = Product
@@ -54,5 +46,7 @@ class ProductDetail(DetailView):
         return context
 
 
-def filter_product(request):
-    return render(request,"")
+
+def category(request):
+    categorie = Category.objects.all()
+    return render(request,"shop/category.html",{'category':category})
