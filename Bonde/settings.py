@@ -102,16 +102,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-<<<<<<< HEAD
-}'''
 
-DATABASES = {
-=======
 }
-
-
 """DATABASES = {
->>>>>>> d06056a22e7ca670d17c505393764379c6e33749
+
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'commerce', 
