@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-import django_heroku
+#import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-bzh+a&4@w&%ly57b@bs*b^#g4qixe!r)2e-9g$(wzo5&ai7f&f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["myappcommmerce.herokuapp.com"]
+#ALLOWED_HOSTS = ["myappcommmerce.herokuapp.com"]
 
 
 # Application definition
@@ -89,13 +89,15 @@ WSGI_APPLICATION = 'Bonde.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}'''
-DATABASES = {
+}
+
+
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'commerce', 
@@ -104,7 +106,7 @@ DATABASES = {
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
-}
+}"""
 
 """DATABASES = {
     'default': {
@@ -179,7 +181,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "Bonde/static")]
     
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
