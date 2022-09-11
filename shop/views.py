@@ -1,6 +1,9 @@
 
 
+<<<<<<< HEAD
+=======
 from itertools import product
+>>>>>>> d06056a22e7ca670d17c505393764379c6e33749
 
 from django.shortcuts import render,get_object_or_404
 from django.views.generic import DetailView
@@ -56,3 +59,10 @@ class ProductDetail(DetailView):
         return context
 
 
+<<<<<<< HEAD
+=======
+
+def category(request):
+    categorie = Category.objects.all()
+    return render(request,"shop/category.html",{'category':category})
+>>>>>>> b0cd4792772dece74b8c6a311086951fefc6f97d

@@ -43,8 +43,16 @@ INSTALLED_APPS = [
     'send_mail.apps.SendMailConfig',
     'order.apps.OrderConfig',
     'shop.apps.ShopConfig',
+    'rest_framework',
    
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 3,
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
+}
 
 AUTH_USER_MODEL = 'users.CustomUser'
 CART_SESSION_ID = "cart"
@@ -94,40 +102,30 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+
 }
-
-
 """DATABASES = {
+
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'commerce', 
         'USER': 'postgres', 
-        'PASSWORD':'b@di@ne99',
+        'PASSWORD':'badiane99',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
 }"""
 
-"""DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ddip81923j44r8', 
-        'USER': 'rmfjmwfrgmfdzr', 
-        'PASSWORD':'4859c4bbd51288a262620cacb4f9c6c7b6d6bbfef6282c3244ee09667521a8d5',
-        'HOST': 'ec2-44-205-112-253.compute-1.amazonaws.com', 
-        'PORT': '5432',
-    }
-}"""
 
 
 
 
-# PAydunya
+"""# PAydunya
 PAYDUNYA_ACCESS_TOKENS = {
     'PAYDUNYA-MASTER-KEY': "",
     'PAYDUNYA-PRIVATE-KEY': "",
     'PAYDUNYA-TOKEN': ""
-}
+}"""
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
