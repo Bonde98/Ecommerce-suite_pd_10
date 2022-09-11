@@ -20,9 +20,17 @@ def index(request):
 
 class ProductList(View):
     template_name = 'shop/product_list.html'
-    def get(self, request):
+    def get(self, request,category=None):
         products = Product.objects.all()
         categories = Category.objects.all()   
+
+        if category:
+            category = get_object_or_404(Category, slug=category)
+            products = products.filter(category=category)
+
+      
+
+
         q = request.GET.get("q")
         request.session["nom"] = "DialloShop"
         request.session.get("nom")
@@ -33,15 +41,9 @@ class ProductList(View):
                 Q(description__icontains=q) |
                 Q(category__name__icontains=q)
             )
-        return render(request, self.template_name, {"products": products, "categories": categories, })
+        return render(request, self.template_name, {"products": products, "categories": categories,"category":category })
 
-""" def get(self, request):
-        products = Product.objects.all()
-        categories = Category.objects.all()
-        if category:
-            category = get_object_or_404(Category, slug=category)
-            products = products.filter(category=category)
-        return render(request, self.template_name, {"products": products, "categories": categories, })"""
+
 
 class ProductDetail(DetailView):
     model = Product
@@ -54,5 +56,3 @@ class ProductDetail(DetailView):
         return context
 
 
-def filter_product(request):
-    return render(request,"")

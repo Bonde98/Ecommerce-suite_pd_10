@@ -2,11 +2,13 @@
 
 {% block contenu %}
 <section>
-  <h1 class="text-center pb-2">La boutique des leaders </h1>
+  <h1 class="text-center pb-2"> <marquee behavior="" direction="" > La boutique des leaders </marquee> </h1>
 
-  <div class="row">
+  <div class="row container-fluid ">
 
     {% if products %}
+
+    <!-- <h1></h1> -->
 
     {% for product in products %}
     {% include "partials/product-card.html" %}

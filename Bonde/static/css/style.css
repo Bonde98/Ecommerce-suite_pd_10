@@ -36,3 +36,8 @@ div .asse{
 body{
     background-color: rgb(218, 217, 216);
 }
+div .produit{
+    width: 40%;
+    background-position: 10%;
+
+}
