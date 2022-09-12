@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div class="row"> <marquee behavior="" direction="" >Ass Malick </marquee>
+  <div class="row"> <marquee behavior="" direction="" > <h3>La Boutique des Leaders</h3> </marquee>
 
 
     <div class="col-md-3">
@@ -23,14 +23,14 @@
         <a style="color: rgb(93, 140, 6);text-decoration:none;" href="{% url 'product-list' %}"> Tout Les Produits </a>
         {% for category in categories %}
         <li class="list-group-item">
-<<<<<<< HEAD
+
      
           <a style="color: rgb(93, 140, 6);text-decoration:none;" href="{% url 'category_pots_list' category.slug  %}" >{{ category.name }} </a>
-=======
-          <a href="" name="q">{{ category.name }} </a>
+
+          
           
          
->>>>>>> b0cd4792772dece74b8c6a311086951fefc6f97d
+
         </li>
         {% endfor %}
       </ul>
