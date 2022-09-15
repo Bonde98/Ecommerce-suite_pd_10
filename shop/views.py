@@ -15,6 +15,7 @@ def index(request):
     return render(request, "index.html", context)
 
 
+
 class ProductList(View):
     template_name = 'shop/product_list.html'
     def get(self, request,category=None):
@@ -46,6 +47,7 @@ class ProductDetail(DetailView):
     model = Product
     context_object_nme = 'product'
     template_name = 'shop/product_details.html'
+    
 
     def get_context_data(self, **kwargs):
         context = super(ProductDetail, self).get_context_data(**kwargs)
