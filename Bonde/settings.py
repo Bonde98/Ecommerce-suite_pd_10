@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-#import django_heroku
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -119,12 +119,7 @@ DATABASES = {
 
 
 
-"""# PAydunya
-PAYDUNYA_ACCESS_TOKENS = {
-    'PAYDUNYA-MASTER-KEY': "",
-    'PAYDUNYA-PRIVATE-KEY': "",
-    'PAYDUNYA-TOKEN': ""
-}"""
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -162,13 +157,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-'''STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / "static"
-
-STATICFILES_DIR = [
-    BASE_DIR / "static",
-    BASE_DIR / "Bonde" / "static",
-]'''
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
@@ -186,8 +174,3 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-"""try:
-    from .local_settings import *
-except ImportError:
-    pass"""
