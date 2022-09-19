@@ -1,6 +1,6 @@
-<div class="produit col-3 text-center " width="50px">
-    <div class="card">
-      <a href="{{ product.get_absolute_url }}">
+<div class="produit col-3 text-center " style="width: 25rem ;">
+    <div class="card" >
+      <a href="{{ product.get_absolute_url }}" >
         <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" >
       </a>
       <div class="card-body"  >
@@ -8,9 +8,7 @@
         <h4 class="card-text" style="color: rgb(93 , 140 , 6);"> {{ product.price }}Fcfa</h4>
         <p class="card-text">{{ product.description }}</p>
         <a href="{{ product.get_absolute_url }}" class="btn"> Voire</a> 
-        
-        
-        
+          
       </div>
     </div>
   </div>
